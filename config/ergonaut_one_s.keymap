@@ -159,10 +159,10 @@
         default_layer {
             display-name = "MAIN";
             bindings = <
-&kp Q       &kp W       &kp E             &kp R        &kp T        &kp Y    &kp U        &kp I              &kp O            &kp P
-&hm LGUI A  &hm LALT S  &hm LEFT_SHIFT D  &hm LCTRL F  &kp G        &kp H    &hm RCTRL J  &hm RIGHT_SHIFT K  &hm RIGHT_ALT L  &hm LGUI SEMI
-&kp Z       &kp X       &kp C             &kp V        &kp B        &lt 2 N  &kp M        &kp COMMA          &kp DOT          &kp FSLH
-                                          &lt 0 ESC    &lt 0 SPACE  &mo 0    &lt 0 RET    &lt 0 BSPC         &lt 0 DEL
+&kp Q       &kp W       &kp E             &kp R        &kp T      &kp Y  &kp U        &kp I              &kp O            &kp P
+&hm LGUI A  &hm LALT S  &hm LEFT_SHIFT D  &hm LCTRL F  &kp G      &kp H  &hm RCTRL J  &hm RIGHT_SHIFT K  &hm RIGHT_ALT L  &hm LGUI SEMI
+&kp Z       &kp X       &kp C             &kp V        &kp B      &kp N  &kp M        &kp COMMA          &kp DOT          &kp FSLH
+                                          &lt 0 ESC    &kp SPACE  &mo 1  &lt 0 RET    &lt 0 BSPC         &lt 0 DEL
             >;
         };
 
@@ -172,6 +172,15 @@
 &kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp N7           &kp NUMBER_8  &kp NUMBER_9          &kp NUMBER_0
 &kp F1           &kp F2        &kp F3        &kp F4        &kp F5        &kp F6        &kp F7           &kp F8        &kp F9                &kp F10
                                              &trans        &trans        &trans        &kp PRINTSCREEN  &kp DELETE    &trans
+            >;
+        };
+
+        nav_edit_layer {
+            bindings = <
+&kp HOME        &kp UP_ARROW    &kp END             &kp PAGE_UP           &trans  &kp PAGE_UP    &select_word_left  &select_word_right  &select_row_to_beginning  &select_row_to_end
+&kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW     &kp PAGE_DOWN         &trans  &kp PAGE_DOWN  &jump_word_left    &jump_word_right    &kp HOME                  &kp END
+&trans          &trans          &virt_desktop_left  &virtl_desktop_right  &trans  &trans         &kp LEFT           &kp UP_ARROW        &kp DOWN                  &kp RIGHT
+                                                    &trans                &trans  &trans         &trans             &trans              &trans
             >;
         };
 
