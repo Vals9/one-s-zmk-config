@@ -93,6 +93,16 @@
             key-positions = <28 29>;
             layers = <1>;
         };
+
+        adj_layer_l {
+            bindings = <&mo 3>;
+            key-positions = <0 1>;
+        };
+
+        adj_layer_r {
+            bindings = <&mo 3>;
+            key-positions = <9 8>;
+        };
     };
 
     macros {
@@ -177,10 +187,10 @@
 
         nav_edit_layer {
             bindings = <
-&kp HOME        &kp UP_ARROW    &kp END             &kp PAGE_UP           &trans  &kp PAGE_UP     &select_word_left  &select_word_right  &select_row_to_beginning  &select_row_to_end
-&kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW     &kp PAGE_DOWN         &trans  &kp PAGE_DOWN   &jump_word_left    &jump_word_right    &kp HOME                  &kp END
-&trans          &trans          &virt_desktop_left  &virtl_desktop_right  &trans  &studio_unlock  &kp LEFT           &kp UP_ARROW        &kp DOWN                  &kp RIGHT
-                                                    &trans                &trans  &trans          &trans             &trans              &trans
+&kp HOME        &kp UP_ARROW    &kp END             &kp PAGE_UP           &sys_reset      &kp PAGE_UP     &select_word_left  &select_word_right  &select_row_to_beginning  &select_row_to_end
+&kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW     &kp PAGE_DOWN         &studio_unlock  &kp PAGE_DOWN   &jump_word_left    &jump_word_right    &kp HOME                  &kp END
+&trans          &trans          &virt_desktop_left  &virtl_desktop_right  &bootloader     &studio_unlock  &kp LEFT           &kp UP_ARROW        &kp DOWN                  &kp RIGHT
+                                                    &trans                &trans          &trans          &trans             &trans              &trans
             >;
         };
 
