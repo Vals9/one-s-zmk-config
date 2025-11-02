@@ -25,76 +25,153 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        equal_sign {
+            bindings = <&kp EQUAL>;
+            key-positions = <8 7>;
+            layers = <1>;
+        };
+
+        minus_sign {
+            bindings = <&kp MINUS>;
+            key-positions = <6 7>;
+            layers = <1>;
+        };
+
+        left_bracket {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <3 2>;
+            layers = <0>;
+        };
+
+        right_bracket {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <6 7>;
+            layers = <0>;
+        };
+
+        forward_slash {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <8 7>;
+            layers = <0>;
+        };
+
+        single_quote {
+            bindings = <&kp SINGLE_QUOTE>;
+            key-positions = <18 17>;
+            layers = <0>;
+        };
+
+        escape {
+            bindings = <&kp ESCAPE>;
+            key-positions = <3 13>;
+            layers = <0>;
+        };
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <13 23>;
+            layers = <0>;
+        };
+
+        tilde {
+            bindings = <&kp GRAVE>;
+            key-positions = <3 13>;
+            layers = <1>;
+        };
+
+        F11_key {
+            bindings = <&kp F11>;
+            key-positions = <27 28>;
+            layers = <1>;
+        };
+
+        F12_key {
+            bindings = <&kp F12>;
+            key-positions = <28 29>;
+            layers = <1>;
+        };
+    };
+
+    macros {
+        virt_desktop_left: virt_desktop_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LG(LEFT))>;
+            label = "VIRT_DESKTOP_LEFT";
+        };
+
+        virtl_desktop_right: virtl_desktop_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LG(RIGHT))>;
+            label = "VIRTL_DESKTOP_RIGHT";
+        };
+
+        select_word_left: select_word_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(LEFT))>;
+            label = "SELECT_WORD_LEFT";
+        };
+
+        select_word_right: select_word_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(RIGHT))>;
+            label = "SELECT_WORD_RIGHT";
+        };
+
+        select_row_to_beginning: select_row_to_beginning {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(HOME)>;
+            label = "SELECT_ROW_TO_BEGINNING";
+        };
+
+        select_row_to_end: select_row_to_end {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(END)>;
+            label = "SELECT_ROW_TO_END";
+        };
+
+        jump_word_left: jump_word_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LEFT)>;
+            label = "JUMP_WORD_LEFT";
+        };
+
+        jump_word_right: jump_word_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(RIGHT)>;
+            label = "JUMP_WORD_RIGHT";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             display-name = "MAIN";
             bindings = <
-&kp Q       &kp W       &kp E        &kp R          &kp T          &kp Y          &kp U        &kp I         &kp O            &kp P
-&hm LGUI A  &hm LALT S  &hm LCTRL D  &hm LSHFT F    &kp G          &kp H          &hm LSHFT J  &hm LCTRL K   &hm RIGHT_ALT L  &hm LGUI SEMI
-&kp Z       &kp X       &kp C        &kp V          &kp B          &lt 7 N        &kp M        &kp COMMA     &kp DOT          &kp FSLH
-                                     &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB  &lt SYM RET  &lt NUM BSPC  &lt FUN DEL
-            >;
-        };
-
-        nav_layer {
-            display-name = "NAV";
-            bindings = <
-&none     &none     &none      &none      &none  &none     &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)
-&kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none  &kp CAPS  &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
-&none     &none     &none      &none      &none  &kp INS   &kp HOME   &kp PG_DN  &kp PG_UP  &kp END
-                               &none      &none  &none     &kp RET    &kp BSPC   &kp DEL
-            >;
-        };
-
-        mouse_layer {
-            display-name = "MOUSE";
-            bindings = <
-&none     &none     &none      &none      &none  &none  &none  &none  &none  &none
-&kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none  &none  &none  &none  &none  &none
-&none     &none     &none      &none      &none  &none  &none  &none  &none  &none
-                               &mo ADJ    &none  &none  &none  &none  &none
-            >;
-        };
-
-        media_layer {
-            display-name = "MEDIA";
-            bindings = <
-&none     &none     &none      &none      &none  &kp LG(LS(N4))  &none       &kp C_BRI_DN  &kp C_BRI_UP  &none
-&kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none  &none           &kp LSHFT   &kp C_VOL_DN  &kp C_VOL_UP  &kp LGUI
-&none     &none     &none      &none      &none  &none           &none       &none         &none         &none
-                               &none      &none  &mo ADJ         &kp C_STOP  &kp C_PP      &kp K_MUTE
-            >;
-        };
-
-        num_layer {
-            display-name = "NUM";
-            bindings = <
-&kp LBKT   &kp N7  &kp N8  &kp N9   &kp RBKT   &none      &none      &none      &none     &none
-&kp SQT    &kp N4  &kp N5  &kp N6   &kp EQUAL  &none      &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
-&kp GRAVE  &kp N1  &kp N2  &kp N3   &kp BSLH   &none      &none      &none      &none     &none
-                           &kp DOT  &kp N0     &kp MINUS  &none      &none      &none
+&kp Q       &kp W       &kp E             &kp R        &kp T        &kp Y    &kp U        &kp I              &kp O            &kp P
+&hm LGUI A  &hm LALT S  &hm LEFT_SHIFT D  &hm LCTRL F  &kp G        &kp H    &hm RCTRL J  &hm RIGHT_SHIFT K  &hm RIGHT_ALT L  &hm LGUI SEMI
+&kp Z       &kp X       &kp C             &kp V        &kp B        &lt 2 N  &kp M        &kp COMMA          &kp DOT          &kp FSLH
+                                          &lt 0 ESC    &lt 0 SPACE  &mo 0    &lt 0 RET    &lt 0 BSPC         &lt 0 DEL
             >;
         };
 
         sym_layer {
-            display-name = "SYM";
             bindings = <
-&kp LBRC   &kp AMPS  &kp STAR   &kp LPAR   &kp RBRC  &none      &none      &none      &none     &none
-&kp COLON  &kp DLLR  &kp PRCNT  &kp CARET  &kp PLUS  &none      &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
-&kp TILDE  &kp EXCL  &kp AT     &kp HASH   &kp PIPE  &none      &none      &none      &none     &none
-                                &kp LPAR   &kp RPAR  &kp UNDER  &none      &none      &mo ADJ
-            >;
-        };
-
-        fun_layer {
-            display-name = "FUN";
-            bindings = <
-&kp F12  &kp F7  &kp F8  &kp F9     &kp PSCRN        &none    &none      &none      &none     &none
-&kp F11  &kp F4  &kp F5  &kp F6     &kp SLCK         &none    &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
-&kp F10  &kp F1  &kp F2  &kp F3     &kp PAUSE_BREAK  &none    &none      &none      &none     &none
-                         &kp K_APP  &kp SPACE        &kp TAB  &mo ADJ    &none      &none
+&kp EXCLAMATION  &kp AT_SIGN   &kp HASH      &kp DOLLAR    &kp PERCENT   &kp CARET     &kp AMPERSAND    &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+&kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp N7           &kp NUMBER_8  &kp NUMBER_9          &kp NUMBER_0
+&kp F1           &kp F2        &kp F3        &kp F4        &kp F5        &kp F6        &kp F7           &kp F8        &kp F9                &kp F10
+                                             &trans        &trans        &trans        &kp PRINTSCREEN  &kp DELETE    &trans
             >;
         };
 
