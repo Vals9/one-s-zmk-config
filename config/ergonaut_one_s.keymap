@@ -177,10 +177,10 @@
 
         nav_edit_layer {
             bindings = <
-&kp HOME        &kp UP_ARROW    &kp END             &kp PAGE_UP           &trans  &kp PAGE_UP    &select_word_left  &select_word_right  &select_row_to_beginning  &select_row_to_end
-&kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW     &kp PAGE_DOWN         &trans  &kp PAGE_DOWN  &jump_word_left    &jump_word_right    &kp HOME                  &kp END
-&trans          &trans          &virt_desktop_left  &virtl_desktop_right  &trans  &trans         &kp LEFT           &kp UP_ARROW        &kp DOWN                  &kp RIGHT
-                                                    &trans                &trans  &trans         &trans             &trans              &trans
+&kp HOME        &kp UP_ARROW    &kp END             &kp PAGE_UP           &trans  &kp PAGE_UP     &select_word_left  &select_word_right  &select_row_to_beginning  &select_row_to_end
+&kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW     &kp PAGE_DOWN         &trans  &kp PAGE_DOWN   &jump_word_left    &jump_word_right    &kp HOME                  &kp END
+&trans          &trans          &virt_desktop_left  &virtl_desktop_right  &trans  &studio_unlock  &kp LEFT           &kp UP_ARROW        &kp DOWN                  &kp RIGHT
+                                                    &trans                &trans  &trans          &trans             &trans              &trans
             >;
         };
 
